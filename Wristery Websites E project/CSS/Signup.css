@@ -1,0 +1,847 @@
+
+:root {
+    --ivory: #FEFAF3;
+    --cream: #F3EBDD;
+    --gold: #A4864D;
+    --gold-light: #D8B568;
+    --dark: #33251D;
+    --brown: #5F4634;
+    --white: #FFFFFF;
+    --text: #6B5A4C;
+    --border: rgba(164, 134, 77, 0.25);
+    --shadow: 0 12px 35px rgba(51, 37, 29, 0.08);
+}
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--ivory);
+    color: var(--dark);
+    font-family:'Times New Roman', Times, serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.wristery-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(254, 250, 243, 0.97);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.header-container {
+    min-height: 95px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 10px 5%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu-button {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--dark);
+    font-size: 29px;
+    transition: color 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.menu-button:hover {
+    color: var(--gold);
+    background: var(--cream);
+    border-color: var(--border);
+}
+
+.wristery-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wristery-logo img {
+    display: block;
+    width: 100%;
+    max-width: 190px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.header-icon {
+    position: relative;
+    width: 38px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--dark);
+    font-size: 22px;
+    transition: color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.header-icon:hover,
+.header-icon.active-account {
+    color: var(--gold);
+}
+
+.header-icon:hover {
+    transform: translateY(-3px);
+}
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--white);
+    font-size: 10px;
+}
+
+/* =========================================
+   SEARCH PANEL
+   No opening animation
+========================================= */
+
+.search-panel {
+    width: 100%;
+    padding: 15px 5%;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+}
+
+.search-panel[hidden] {
+    display: none;
+}
+
+.search-form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    background: var(--ivory);
+}
+
+.search-form > i {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.search-form input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.search-form button {
+    border: none;
+    background: transparent;
+    color: var(--dark);
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.search-form button:hover {
+    color: var(--gold);
+}
+
+/* =========================================
+   SIDEBAR / OFFCANVAS MENU
+========================================= */
+
+.wristery-menu {
+    width: 320px !important;
+    max-width: 88%;
+    background: var(--ivory);
+    color: var(--dark);
+}
+
+.wristery-menu .offcanvas-header {
+    padding: 25px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.wristery-menu .offcanvas-title {
+    color: var(--dark);
+    font-family:'Times New Roman', Times, serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.wristery-menu .btn-close {
+    box-shadow: none;
+}
+
+.wristery-menu .offcanvas-body {
+    padding: 25px 24px;
+}
+
+.menu-subtitle {
+    margin-bottom: 25px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-links > a,
+.category-toggle {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 10px;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    background: transparent;
+    color: var(--dark);
+    text-align: left;
+    font-size: 13px;
+    transition: color 0.3s ease,
+                background 0.3s ease,
+                padding-left 0.3s ease;
+}
+
+.menu-links > a i,
+.category-label > i {
+    width: 20px;
+    color: var(--gold);
+    font-size: 17px;
+}
+
+.menu-links > a:hover,
+.category-toggle:hover {
+    padding-left: 17px;
+    background: var(--cream);
+    color: var(--gold);
+}
+
+.category-menu {
+    width: 100%;
+}
+
+.category-toggle {
+    justify-content: space-between;
+}
+
+.category-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.category-arrow {
+    color: var(--gold);
+    transition: transform 0.3s ease;
+}
+
+.category-toggle[aria-expanded="true"] .category-arrow {
+    transform: rotate(180deg);
+}
+
+.subcategory-links {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0 8px 35px;
+}
+
+.subcategory-links a {
+    padding: 11px 10px;
+    border-left: 1px solid var(--gold-light);
+    color: var(--text-light);
+    font-size: 12px;
+    transition: color 0.3s ease,
+                padding-left 0.3s ease;
+}
+
+.subcategory-links a:hover {
+    padding-left: 17px;
+    color: var(--gold);
+}
+
+
+/* ========================================
+   SIGNUP PAGE LAYOUT
+======================================== */
+
+.signup-page {
+    width: 100%;
+    min-height: calc(100vh - 95px);
+    padding: 30px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    width: 100%;
+    max-width: 1150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+/* LEFT SIDE: WATCH IMAGE */
+
+.watch-side {
+    width: 100%;
+    min-width: 0;
+    min-height: 650px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.signup-watch-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 650px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* RIGHT SIDE: SIGNUP FORM */
+
+.form-side {
+    width: 100%;
+    min-width: 0;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    background: var(--white);
+}
+
+
+/* =========================================
+   INPUT FIELDS
+========================================= */
+
+.input-group-custom {
+    position: relative;
+    width: 100%;
+    min-height: 52px;
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: var(--ivory);
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+}
+
+.input-group-custom:focus-within {
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(164, 134, 77, 0.10);
+}
+
+.input-group-custom > i {
+    flex-shrink: 0;
+    margin-left: 15px;
+    color: var(--gold);
+    font-size: 17px;
+}
+
+.input-group-custom input {
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+    padding: 0 13px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--dark);
+    font-size: 12px;
+}
+
+.input-group-custom input::placeholder {
+    color: #998D80;
+    opacity: 1;
+}
+
+.eye-btn {
+    flex-shrink: 0;
+    width: 42px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.eye-btn:hover {
+    color: var(--gold);
+}
+
+/* =========================================
+   TERMS AND CONDITIONS
+========================================= */
+
+.terms {
+    margin: 5px 0 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.terms input {
+    flex-shrink: 0;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    accent-color: var(--gold);
+    cursor: pointer;
+}
+
+.terms label {
+    color: var(--text-light);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+.terms a {
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.terms a:hover {
+    color: var(--brown);
+}
+
+/* =========================================
+   SIGNUP BUTTON
+========================================= */
+
+.signup-btn {
+    position: relative;
+    width: 100%;
+    min-height: 51px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid var(--gold);
+    background: var(--brown);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.signup-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold);
+    background: var(--gold);
+    box-shadow: 0 8px 20px rgba(95, 25, 4, 0.15);
+}
+
+.signup-btn:active {
+    transform: translateY(0);
+}
+
+.signup-btn i {
+    font-size: 15px;
+}
+
+/* FORM STATUS MESSAGE */
+
+#formStatus {
+    margin: 12px 0 0;
+    color: var(--brown);
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* =========================================
+   OR DIVIDER
+========================================= */
+
+.divider {
+    position: relative;
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background: var(--border);
+}
+
+.divider span {
+    position: relative;
+    z-index: 1;
+    padding: 0 15px;
+    background: var(--white);
+    color: var(--text-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   GOOGLE BUTTON
+========================================= */
+
+.social-btn {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--dark);
+    font-size: 12px;
+    font-weight: 500;
+    transition: border-color 0.3s ease,
+                background 0.3s ease,
+                transform 0.3s ease;
+}
+
+.social-btn i {
+    color: #4285F4;
+    font-size: 17px;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--gold);
+    background: var(--ivory);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+    .header-container {
+        min-height: 82px;
+        padding: 8px 4%;
+    }
+
+    .wristery-logo img {
+        max-width: 165px;
+        height: 60px;
+    }
+
+    .header-icons {
+        gap: 10px;
+    }
+
+    .signup-page {
+        padding: 35px 4%;
+    }
+
+    .content {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .watch-side {
+        padding: 30px;
+    }
+
+    .form-side {
+        padding: 35px 25px;
+    }
+
+    .watch-logo {
+        margin-bottom: 55px;
+    }
+}
+
+@media (max-width: 650px) {
+    .header-container {
+        min-height: 75px;
+        grid-template-columns: 1fr 2fr 1fr;
+        padding: 8px 4%;
+    }
+
+    .menu-button {
+        width: 35px;
+        height: 40px;
+        font-size: 25px;
+    }
+
+    .wristery-logo img {
+        max-width: 140px;
+        height: 52px;
+    }
+
+    .header-icons {
+        gap: 4px;
+    }
+
+    .header-icon {
+        width: 31px;
+        height: 38px;
+        font-size: 19px;
+    }
+
+    .signup-page {
+        min-height: auto;
+        padding: 25px 4%;
+    }
+
+    .content {
+        max-width: 460px;
+        grid-template-columns: 1fr;
+    }
+
+    .watch-side {
+        min-height: 330px;
+        padding: 35px 25px;
+    }
+
+    .watch-side::before {
+        width: 250px;
+        height: 250px;
+    }
+
+    .watch-side::after {
+        width: 210px;
+        height: 210px;
+    }
+
+    .watch-logo {
+        margin-bottom: 30px;
+    }
+
+    .watch-logo > span {
+        width: 48px;
+        height: 48px;
+        font-size: 29px;
+    }
+
+    .watch-logo h1 {
+        font-size: 30px;
+        letter-spacing: 5px;
+    }
+
+    .watch-logo p {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .watch-text h2 {
+        font-size: 29px;
+    }
+
+    .watch-text p {
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
+
+    .watch-text h3 {
+        font-size: 20px;
+    }
+
+    .form-side {
+        padding: 35px 25px;
+    }
+
+    .heading h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 380px) {
+    .header-container {
+        padding: 8px 3%;
+    }
+
+    .wristery-logo img {
+        max-width: 115px;
+    }
+
+    .header-icons {
+        gap: 1px;
+    }
+
+    .header-icon {
+        width: 28px;
+        font-size: 17px;
+    }
+
+    .signup-page {
+        padding: 18px 3%;
+    }
+
+    .watch-side {
+        padding: 30px 18px;
+    }
+
+    .form-side {
+        padding: 30px 18px;
+    }
+
+    .heading h2 {
+        font-size: 29px;
+    }
+
+    .terms label {
+        font-size: 9px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+/* Footer */
+.wristery-footer {
+    width: 100%;
+    padding: 38px 20px 25px;
+    background: var(--dark);
+    color: #E8DDCC;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--gold-light);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+}
+
+.footer-logo:hover {
+    color: var(--white);
+}
+
+.footer-content > p {
+    margin: 0 0 18px;
+    color: #E8DDCC;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.footer-content .copyright {
+    margin-top: 22px;
+    margin-bottom: 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+    color: #D3C4AE;
+    font-size: 10px;
+}

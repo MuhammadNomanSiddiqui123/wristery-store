@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WRISTERY | Luxury Gallery</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../Css/gallery.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+     WRISTERY HEADER START
+========================================= -->
+
+    <header class="wristery-header">
+
+        <div class="header-container">
+
+            <!-- LEFT: HAMBURGER MENU -->
+            <div class="header-left">
+
+                <button class="menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#wristeryMenu"
+                    aria-controls="wristeryMenu" aria-label="Open navigation menu">
+
+                    <i class="bi bi-list"></i>
+
+                </button>
+
+            </div>
+
+            <!-- CENTER: LOGO -->
+            <a href="index.html" class="wristery-logo">
+
+                <img src="../Image/Logo.png" alt="WRISTERY Luxury Watches Logo">
+
+            </a>
+
+            <!-- RIGHT: THREE HEADER ICONS -->
+            <div class="header-icons">
+
+                <!-- SEARCH ICON -->
+                <button class="header-icon" type="button" id="searchButton" aria-label="Search watches" title="Search">
+
+                    <i class="bi bi-search"></i>
+
+                </button>
+
+                <!-- SIGNUP ICON -->
+                <a href="./signup.html" class="header-icon" aria-label="Sign Up" title="Sign Up">
+
+                    <i class="bi bi-person"></i>
+
+                </a>
+
+                <!-- SHOPPING BAG ICON -->
+                <a href="./cart.html" class="header-icon" aria-label="Shopping Bag" title="Shopping Bag">
+
+                    <i class="bi bi-bag"></i>
+
+                    <span class="cart-count">0</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- =========================================
+     WRISTERY HEADER END
+========================================= -->
+
+
+    <!-- =========================================
+     SIDEBAR MENU START
+========================================= -->
+
+    <div class="offcanvas offcanvas-start wristery-menu" tabindex="-1" id="wristeryMenu"
+        aria-labelledby="wristeryMenuLabel">
+
+        <!-- SIDEBAR HEADER -->
+        <div class="offcanvas-header">
+
+            <h5 class="offcanvas-title" id="wristeryMenuLabel">
+                WRISTERY
+            </h5>
+
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close menu">
+            </button>
+
+        </div>
+
+        <!-- SIDEBAR BODY -->
+        <div class="offcanvas-body">
+
+            <p class="menu-subtitle">DISCOVER OUR WORLD</p>
+
+            <nav class="menu-links" aria-label="Main navigation">
+
+                <!-- HOME -->
+                <a href="index.html">
+                    <i class="bi bi-house"></i>
+                    <span>Home</span>
+                </a>
+
+                <!-- ABOUT -->
+                <a href="about.html">
+                    <i class="bi bi-info-circle"></i>
+                    <span>About</span>
+                </a>
+
+                <!-- CATEGORIES DROPDOWN -->
+                <div class="category-menu">
+
+                    <button class="category-toggle" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#watchCategories" aria-expanded="false" aria-controls="watchCategories">
+
+                        <span class="category-label">
+
+                            <i class="bi bi-watch"></i>
+
+                            <span>Categories</span>
+
+                        </span>
+
+                        <i class="bi bi-chevron-down category-arrow"></i>
+
+                    </button>
+
+                    <div class="collapse" id="watchCategories">
+
+                        <div class="subcategory-links">
+
+                            <a href="./Menwatches.html">
+                                <b>Men Watches</b>
+                            </a>
+
+                            <a href="./women-watches.html">
+                                <b>Women Watches</b>
+                            </a>
+
+                            <a href="./couple-watches.html">
+                                <b>Couple Watches</b>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- GALLERY -->
+                <a href="gallery.html" class="active" aria-current="page">
+                    <i class="bi bi-images"></i>
+                    <span>Gallery</span>
+                </a>
+
+                <!-- STORE LOCATOR -->
+                <a href="store-locator.html">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Store Locator</span>
+                </a>
+
+                <!-- SUPPORT -->
+                <a href="support.html">
+                    <i class="bi bi-headset"></i>
+                    <span>Support</span>
+                </a>
+
+                <!-- CONTACT -->
+                <a href="Contact.html">
+                    <i class="bi bi-envelope"></i>
+                    <span>Contact Us</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+    <!-- =========================================
+     SIDEBAR MENU END
+========================================= -->
+
+
+    <!-- =========================================
+     MAIN WEBSITE CONTENT START
+========================================= -->
+
+    <div class="website">
+
+        <main class="main-content">
+
+            <!-- GALLERY HEADING -->
+            <section class="gallery-heading">
+
+                <span class="eyebrow">DISCOVER OUR COLLECTION</span>
+
+                <h1>Gallery<span>.</span></h1>
+
+                <p>
+                    Every second tells a story.
+                    Discover watches crafted for those who value timeless elegance.
+                </p>
+
+            </section>
+
+
+            <!-- SEARCH BAR -->
+            <div class="search-wrapper">
+
+                <i class="bi bi-search"></i>
+
+                <input type="search" id="searchInput" placeholder="Search your perfect timepiece..."
+                    aria-label="Search watches">
+
+                <span class="search-shortcut">SEARCH</span>
+
+            </div>
+
+
+            <!-- FILTER SECTION -->
+            <section class="filter-section">
+
+                <div class="filter-buttons" id="filterButtons">
+
+                    <button class="filter-btn active" data-filter="all">
+                        All Watches
+                    </button>
+                    <!-- =====================================
+             WATCH GALLERY
+        ====================================== -->
+
+                    <section class="watch-grid" id="watchGrid">
+
+                        <!-- WATCH 1: ROYAL BLACK -->
+                        <article class="watch-card" data-name="Royal Black" data-category="men luxury"
+                            data-price="75000">
+
+                            <div class="watch-image">
+
+                                <span class="product-tag">BESTSELLER</span>
+
+                                <button class="wishlist-btn" aria-label="Add Royal Black to wishlist" type="button">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+                                <img src="../Image/Gallery pic 01.jpeg" alt="Royal Black luxury wristwatch"
+                                    loading="lazy">
+
+                                <button class="quick-view" type="button">
+
+                                    QUICK VIEW
+                                    <i class="bi bi-arrow-up-right"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="watch-info">
+
+                                <div>
+
+                                    <h3>Elora</h3>
+
+                                </div>
+
+                                <span class="watch-price">Rs. 45$</span>
+
+                            </div>
+
+                            <p class="watch-description">
+                                Bold design. Timeless character.
+                            </p>
+
+                        </article>
+
+
+                        <!-- WATCH 2: OCEAN BLUE -->
+                        <article class="watch-card" data-name="Ocean Blue" data-category="men classic"
+                            data-price="60000">
+
+                            <div class="watch-image">
+
+                                <button class="wishlist-btn" aria-label="Add Ocean Blue to wishlist" type="button">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+                                <img src="../Image/Gallery pic 02.jpeg" alt="Ocean Blue wristwatch" loading="lazy">
+
+                                <button class="quick-view" type="button">
+
+                                    QUICK VIEW
+                                    <i class="bi bi-arrow-up-right"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="watch-info">
+
+                                <div>
+                                    <h3>Lagaila Muse Trio</h3>
+
+                                </div>
+
+                                <span class="watch-price">Rs. 100$</span>
+
+                            </div>
+
+                            <p class="watch-description">
+                                Inspired by the depth of the ocean.
+                            </p>
+
+                        </article>
+
+
+                        <!-- WATCH 3: GOLDEN HERITAGE -->
+                        <article class="watch-card" data-name="Golden Heritage" data-category="women luxury"
+                            data-price="52000">
+
+                            <div class="watch-image">
+
+                                <span class="product-tag">SIGNATURE</span>
+
+                                <button class="wishlist-btn" aria-label="Add Golden Heritage to wishlist" type="button">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+                                <img src="../Image/Gallery pic 03.jpeg" alt="Golden Heritage elegant watch"
+                                    loading="lazy">
+
+                                <button class="quick-view" type="button">
+
+                                    QUICK VIEW
+                                    <i class="bi bi-arrow-up-right"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="watch-info">
+
+                                <div>
+
+                                    <h3>Midnight</h3>
+
+                                </div>
+
+                                <span class="watch-price">Rs. 50$</span>
+
+                            </div>
+
+                            <p class="watch-description">
+                                A golden touch of sophistication.
+                            </p>
+
+                        </article>
+
+
+                        <!-- WATCH 4: SILVER HORIZON -->
+                        <article class="watch-card" data-name="Silver Horizon" data-category="men classic"
+                            data-price="48000">
+
+                            <div class="watch-image">
+
+                                <button class="wishlist-btn" aria-label="Add Silver Horizon to wishlist" type="button">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+                                <img src="../Image/Gallery pic 04.jpeg" alt="Silver Horizon luxury watch"
+                                    loading="lazy">
+
+                                <button class="quick-view" type="button">
+
+                                    QUICK VIEW
+                                    <i class="bi bi-arrow-up-right"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="watch-info">
+
+                                <div>
+
+                                    <h3>Aurora</h3>
+
+                                </div>
+
+                                <span class="watch-price">Rs. 60$</span>
+
+                            </div>
+
+                            <p class="watch-description">
+                                Understated elegance for every day.
+                            </p>
+
+                        </article>
+
+
+                        <!-- WATCH 5: MIDNIGHT GOLD -->
+                        <article class="watch-card" data-name="Midnight Gold" data-category="men luxury"
+                            data-price="95000">
+
+                            <div class="watch-image">
+
+                                <span class="product-tag">PREMIUM</span>
+
+                                <button class="wishlist-btn" aria-label="Add Midnight Gold to wishlist" type="button">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+                                <img src="../Image/Gallery pic 06.jpeg" alt="Midnight Gold premium timepiece"
+                                    loading="lazy">
+
+                                <button class="quick-view" type="button">
+
+                                    QUICK VIEW
+                                    <i class="bi bi-arrow-up-right"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="watch-info">
+
+                                <div>
+
+                                    <h3>Diamond</h3>
+
+                                </div>
+
+                                <span class="watch-price">Rs. 70$</span>
+
+                            </div>
+
+                            <p class="watch-description">
+                                Made to make a statement.
+                            </p>
+
+                        </article>
+
+
+                        <!-- WATCH 6: ROSE ELEGANCE -->
+                        <article class="watch-card" data-name="Rose Elegance" data-category="women classic"
+                            data-price="42000">
+
+                            <div class="watch-image">
+
+                                <button class="wishlist-btn" aria-label="Add Rose Elegance to wishlist" type="button">
+
+                                    <i class="bi bi-heart"></i>
+
+                                </button>
+
+                                <img src="../Image/Gallery pic 05.jpeg" alt="Rose Elegance wristwatch" loading="lazy">
+
+                                <button class="quick-view" type="button">
+
+                                    QUICK VIEW
+                                    <i class="bi bi-arrow-up-right"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="watch-info">
+
+                                <div>
+
+                                    <h3>Octa </h3>
+
+                                </div>
+
+                                <span class="watch-price">Rs. 90$</span>
+
+                            </div>
+
+                            <p class="watch-description">
+                                Delicate details, lasting beauty.
+                            </p>
+
+                        </article>
+
+                    </section>
+
+
+                    <!-- NO RESULTS MESSAGE -->
+                    <div class="no-results" id="noResults" hidden>
+
+                        <i class="bi bi-search"></i>
+
+                        <h3>No watches found</h3>
+
+                        <p>
+                            Try another name or choose a different category.
+                        </p>
+
+                        <button id="resetFilters" type="button">
+                            Show All Watches
+                        </button>
+
+                    </div>
+
+
+                    <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+                    <footer class="gallery-footer">
+
+                        <div>
+
+                            <span class="footer-brand">WRISTERY</span>
+
+                            <p>TIMELESS LUXURY. EVERY SECOND.</p>
+
+                        </div>
+
+                        <a href="Contact.html">
+                            Need assistance? Contact us
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+
+                    </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================
+     QUICK VIEW MODAL
+========================================= -->
+
+    <div class="modal fade" id="watchModal" tabindex="-1" aria-labelledby="modalName" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+
+            <div class="modal-content quick-modal">
+
+                <!-- CLOSE BUTTON -->
+                <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+                <div class="row g-0">
+
+                    <!-- MODAL IMAGE -->
+                    <div class="col-md-6">
+
+                        <img src="" id="modalImage" class="modal-watch-image" alt="Selected watch">
+
+                    </div>
+
+                    <!-- MODAL DETAILS -->
+                    <div class="col-md-6 modal-details">
+
+                        <span class="eyebrow">
+                            WRISTERY TIMEPIECES
+                        </span>
+
+                        <h2 id="modalName">Watch Name</h2>
+
+                        <p class="modal-price" id="modalPrice"></p>
+
+                        <p class="modal-description">
+                            Discover timeless style with this WRISTERY
+                            collection piece, designed for a refined look.
+                        </p>
+
+                        <div class="modal-features">
+
+                            <span>
+                                <i class="bi bi-gem"></i>
+                                Elegant design
+                            </span>
+
+                            <span>
+                                <i class="bi bi-stars"></i>
+                                Refined details
+                            </span>
+
+                            <span>
+                                <i class="bi bi-clock"></i>
+                                Timeless style
+                            </span>
+
+                        </div>
+
+                        <button class="modal-wishlist" id="modalWishlist" type="button">
+
+                            <i class="bi bi-heart"></i>
+                            ADD TO WISHLIST
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+     JAVASCRIPT FILES
+========================================= -->
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Gallery JavaScript -->
+    <script src="../Js/gallery.js"></script>
+
+    <!-- HEADER SEARCH FUNCTION -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const searchButton = document.getElementById("searchButton");
+            const searchInput = document.getElementById("searchInput");
+
+            if (searchButton && searchInput) {
+
+                searchButton.addEventListener("click", function () {
+
+                    searchInput.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                    searchInput.focus();
+
+                });
+
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

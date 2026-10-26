@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | WRISTERY</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Contact CSS -->
+    <link rel="stylesheet" href="../Css/contact.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="wristery-header">
+        <div class="header-container">
+
+            <div class="header-left">
+                <button class="menu-button" type="button" data-bs-toggle="offcanvas" data-bs-target="#wristeryMenu"
+                    aria-controls="wristeryMenu" aria-label="Open navigation menu">
+
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            <!-- LOGO -->
+            <a href="index.html" class="wristery-logo">
+                <img src="../Image/logo.png" alt="WRISTERY Logo">
+            </a>
+
+            <!-- HEADER ICONS -->
+            <div class="header-icons">
+
+                <a href="#" class="header-icon" aria-label="Search">
+                    <i class="bi bi-search"></i>
+                </a>
+
+                <a href="#" class="header-icon" aria-label="My Account">
+                    <i class="bi bi-person"></i>
+                </a>
+
+                <a href="#" class="header-icon" aria-label="Shopping Bag">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- SIDEBAR MENU -->
+    <div class="offcanvas offcanvas-start wristery-menu" tabindex="-1" id="wristeryMenu"
+        aria-labelledby="wristeryMenuLabel">
+
+        <div class="offcanvas-header">
+            <div>
+                <h5 class="offcanvas-title" id="wristeryMenuLabel">
+                    WRISTERY
+                </h5>
+                <p class="menu-subtitle">Discover Over World</p>
+            </div>
+
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+            </button>
+        </div>
+
+        <div class="offcanvas-body">
+            <nav class="menu-links">
+
+                <a href="index.html">
+                    <i class="bi bi-house"></i>
+                    Home
+                </a>
+
+                <a href="About.html">
+                    <i class="bi bi-info-circle"></i>
+                    About Us
+                </a>
+
+                <!-- CATEGORIES -->
+                <div class="category-menu">
+
+                    <button class="category-toggle" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#watchCategories" aria-expanded="false" aria-controls="watchCategories">
+
+                        <span class="category-label">
+                            <i class="bi bi-watch"></i>
+                            Categories
+                        </span>
+
+                        <i class="bi bi-chevron-down category-arrow"></i>
+                    </button>
+
+                    <div class="collapse" id="watchCategories">
+                        <div class="subcategory-links">
+
+                            <a href="Men.html"><b>Men Watches</b></a>
+                            <a href="Women.html"><b>Women Watches</b></a>
+                            <a href="Couple.html"><b>Couple Watches</b></a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <a href="Gallery.html">
+                    <i class="bi bi-images"></i>
+                    Gallery
+                </a>
+
+                <a href="StoreLocator.html">
+                    <i class="bi bi-geo-alt"></i>
+                    Store Locator
+                </a>
+
+                <a href="Support.html">
+                    <i class="bi bi-headset"></i>
+                    Support
+                </a>
+
+                <a href="Contact.html" class="active">
+                    <i class="bi bi-envelope"></i>
+                    Contact Us
+                </a>
+
+            </nav>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- CONTACT HERO WITH BACKGROUND IMAGE -->
+        <section class="contact-hero">
+
+            <div class="contact-hero-content">
+
+                <span class="section-label">GET IN TOUCH</span>
+
+                <h1>Contact Us</h1>
+
+                <p>
+                    We would love to hear from you.
+                    Let us help you discover your perfect timepiece.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section">
+
+            <div class="contact-container">
+
+                <!-- CONTACT FORM -->
+                <div class="contact-form-wrapper">
+
+                    <span class="section-label">SEND US A MESSAGE</span>
+
+                    <h2>We'd Love to Hear From You</h2>
+
+                    <p class="form-description">
+                        Have a question about our watches or services?
+                        Fill out the form below and our team will be
+                        happy to assist you.
+                    </p>
+
+                    <form id="contactForm">
+
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name"
+                                autocomplete="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address"
+                                autocomplete="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+
+                            <select id="subject" name="subject" required>
+                                <option value="" selected disabled>Select Subject</option>
+                                <option value="Product Inquiry">Product Inquiry</option>
+                                <option value="Order Inquiry">Order Inquiry</option>
+                                <option value="Delivery">Shipping & Delivery</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Write your message here..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            Send Message
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                        <p id="formMessage" class="form-message" role="status" aria-live="polite">
+                        </p>
+
+                    </form>
+                </div>
+
+                <!-- CONTACT INFORMATION -->
+                <div class="contact-info">
+
+                    <span class="section-label">WE ARE HERE FOR YOU</span>
+
+                    <h2>Let's Start a Conversation</h2>
+
+                    <p class="contact-description">
+                        Our team is here to help with your questions,
+                        product information and customer service needs.
+                        Feel free to contact us.
+                    </p>
+
+                    <div class="contact-detail">
+
+                        <div class="contact-detail-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+
+                        <div class="contact-detail-text">
+                            <h3>Email </h3>
+                            <p>m.hassansheikh2006@gmail.com</p>
+                            <p>areenahmed3107@gmail.com</p>
+                            <p>aimanrizwan572@gmail.com</p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-detail">
+
+                        <div class="contact-detail-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+
+                        <div class="contact-detail-text">
+                            <h3>Call Us</h3>
+                            <p>+92 337 37709 27</p>
+                            <p>+92 311 18057 11</p>
+                            <p>+92 335 21417 50</p>
+                            <p>+92 301 2916233</p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-detail">
+
+                        <div class="contact-detail-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+
+                        <div class="contact-detail-text">
+                            <h3>Visit Us</h3>
+                            <p>Karachi, Pakistan</p>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-detail">
+
+                        <div class="contact-detail-icon">
+                            <i class="bi bi-clock"></i>
+                        </div>
+
+                        <div class="contact-detail-text">
+                            <h3>Working Hours</h3>
+                            <p>Monday – Saturday</p>
+                            <p>10:00 AM – 7:00 PM</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="wristery-footer">
+
+        <div class="footer-content">
+
+            <a href="index.html" class="footer-logo">
+                WRISTERY
+            </a>
+
+            <p>Timeless watches. Lasting impressions.</p>
+
+            <p class="copyright">
+                &copy; <span id="year"></span> WRISTERY.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+
+    </footer>
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CONTACT JAVASCRIPT -->
+    <script src="../Js/contact.js"></script>
+    <a href="Contact.html">
+        <i class="bi bi-envelope"></i>
+        <span>Contact Us</span>
+
+        <script>
+
+            /* =========================================
+               WRISTERY CONTACT PAGE JAVASCRIPT
+            ========================================= */
+
+            /* 1. AUTOMATIC COPYRIGHT YEAR */
+
+            const yearElement = document.getElementById("year");
+
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+
+            /* 2. CONTACT FORM */
+
+            const contactForm = document.getElementById("contactForm");
+            const formMessage = document.getElementById("formMessage");
+
+            if (contactForm && formMessage) {
+
+                contactForm.addEventListener("submit", function (event) {
+
+                    // Page reload hone se rokna
+                    event.preventDefault();
+
+                    // Form ki values lena
+                    const name = document.getElementById("name").value.trim();
+                    const email = document.getElementById("email").value.trim();
+                    const subject = document.getElementById("subject").value.trim();
+                    const message = document.getElementById("message").value.trim();
+
+                    // Purana message clear karna
+                    formMessage.textContent = "";
+                    formMessage.classList.remove("success", "error");
+
+                    // Empty fields check karna
+                    if (!name || !email || !subject || !message) {
+
+                        formMessage.textContent =
+                            "Please fill in all fields.";
+
+                        formMessage.classList.add("error");
+
+                        return;
+                    }
+
+                    // Email format check karna
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                    if (!emailPattern.test(email)) {
+
+                        formMessage.textContent =
+                            "Please enter a valid email address.";
+
+                        formMessage.classList.add("error");
+
+                        return;
+                    }
+
+                    // Success message show karna
+                    formMessage.textContent =
+                        "Thank you, " + name +
+                        "! Your form has been checked successfully.";
+
+                    formMessage.classList.add("success");
+
+                    // Form clear karna
+                    contactForm.reset();
+
+                });
+
+            }
+
+
+            /* 3. CATEGORY ARROW ANIMATION */
+
+            const categoryToggle = document.querySelector(".category-toggle");
+            const categoryMenu = document.getElementById("watchCategories");
+            const categoryArrow = document.querySelector(".category-arrow");
+
+            if (categoryToggle && categoryMenu && categoryArrow) {
+
+                categoryMenu.addEventListener("show.bs.collapse", function () {
+                    categoryArrow.style.transform = "rotate(180deg)";
+                });
+
+                categoryMenu.addEventListener("hide.bs.collapse", function () {
+                    categoryArrow.style.transform = "rotate(0deg)";
+                });
+
+                categoryArrow.style.transition = "transform 0.3s ease";
+            }
+
+
+            /* 4. CLOSE SIDEBAR WHEN A MENU LINK IS CLICKED */
+
+            const sidebar = document.getElementById("wristeryMenu");
+
+            if (sidebar) {
+
+                const menuLinks = sidebar.querySelectorAll(
+                    ".menu-links > a, .subcategory-links a"
+                );
+
+                menuLinks.forEach(function (link) {
+
+                    link.addEventListener("click", function () {
+
+                        if (window.bootstrap) {
+
+                            const offcanvasInstance =
+                                bootstrap.Offcanvas.getInstance(sidebar);
+
+                            if (offcanvasInstance) {
+                                offcanvasInstance.hide();
+                            }
+
+                        }
+
+                    });
+
+                });
+
+            }
+
+        </script>
+</body>
+
+</html>

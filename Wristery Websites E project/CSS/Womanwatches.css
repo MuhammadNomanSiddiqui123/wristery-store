@@ -1,0 +1,389 @@
+
+/* =====================================
+   WRISTERY - HEADER AND VIDEO CSS
+===================================== */
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    background: #FEFAF3;
+    color: #33251d;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.wristery-header {
+    width: 100%;
+    background: #FEFAF3;
+    border-bottom: 1px solid #e9e0d2;
+    position: relative;
+    z-index: 100;
+}
+
+.header-container {
+    width: 100%;
+    min-height: 80px;
+    padding: 5px 3%;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+}
+
+.header-left {
+    grid-column: 1;
+    justify-self: start;
+}
+
+/* HAMBURGER BUTTON */
+.menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    color: #5a1703;
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.menu-button:hover {
+    color: #a47b36;
+}
+
+/* KEYBOARD FOCUS */
+.menu-button:focus-visible,
+.header-icon:focus-visible,
+.category-toggle:focus-visible {
+    outline: 2px solid #a47b36;
+    outline-offset: 4px;
+}
+
+/* CENTER LOGO */
+.wristery-logo {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    text-decoration: none;
+}
+
+.wristery-logo img {
+    display: block;
+    width: auto;
+    height: 75px;
+    max-width: 190px;
+    object-fit: contain;
+}
+
+/* RIGHT HEADER ICONS */
+.header-icons {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+}
+
+.header-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    border: none;
+    background: transparent;
+    color: #5f1904;
+    font-size: 21px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.header-icon:hover {
+    color: #a47b36;
+    transform: translateY(-2px);
+}
+
+/* CART COUNT */
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #503636;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    border-radius: 50%;
+}
+
+/* SIDEBAR */
+.wristery-menu {
+    width: 320px !important;
+    max-width: 85%;
+    background: #FEFAF3;
+    color: #33251d;
+}
+
+.wristery-menu .offcanvas-header {
+    padding: 24px;
+    border-bottom: 1px solid #e9dfd0;
+}
+
+.wristery-menu .offcanvas-title {
+    color: #5f1904;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.wristery-menu .btn-close {
+    box-shadow: none;
+}
+
+.wristery-menu .offcanvas-body {
+    padding: 24px;
+}
+
+/* SIDEBAR SUBTITLE */
+.menu-subtitle {
+    margin: 0 0 18px;
+    color: #410404;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* NAVIGATION LINKS */
+.menu-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-links > a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 5px;
+    color: #33251d;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #e9e0d2;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.menu-links > a i {
+    width: 22px;
+    color: #94733b;
+    font-size: 18px;
+    text-align: center;
+}
+
+.menu-links > a:hover {
+    color: #a47b36;
+    padding-left: 12px;
+}
+
+/* CATEGORY DROPDOWN */
+.category-menu {
+    border-bottom: 1px solid #e9e0d2;
+}
+
+.category-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 5px;
+    background: transparent;
+    border: none;
+    color: #33251d;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.category-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.category-label i {
+    width: 22px;
+    color: #94733b;
+    font-size: 18px;
+    text-align: center;
+}
+
+.category-toggle:hover {
+    color: #a47b36;
+}
+
+.category-arrow {
+    color: #94733b;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.category-toggle[aria-expanded="true"] .category-arrow {
+    transform: rotate(180deg);
+}
+
+/* SUBCATEGORY LINKS */
+.subcategory-links {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 10px 36px;
+}
+
+.subcategory-links a {
+    display: block;
+    padding: 11px 10px;
+    color: #6d5541;
+    font-size: 14px;
+    text-decoration: none;
+    border-left: 2px solid #d8b568;
+    transition: all 0.3s ease;
+}
+
+.subcategory-links a:hover {
+    color: #a47b36;
+    background: #f5eee2;
+    padding-left: 17px;
+}
+
+/* WATCH VIDEO */
+.watch-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: #000;
+}
+
+/* TABLETS */
+@media (max-width: 768px) {
+    .header-container {
+        min-height: 70px;
+        padding: 5px 4%;
+    }
+
+    .wristery-logo img {
+        height: 58px;
+        max-width: 150px;
+    }
+
+    .header-icons {
+        gap: 14px;
+    }
+
+    .watch-video {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+    .header-container {
+        min-height: 65px;
+        padding: 5px 4%;
+    }
+
+    .wristery-logo img {
+        height: 46px;
+        max-width: 115px;
+    }
+
+    .menu-button {
+        font-size: 25px;
+    }
+
+    .header-icons {
+        gap: 12px;
+    }
+
+    .header-icon {
+        font-size: 18px;
+    }
+
+    .wristery-menu .offcanvas-header {
+        padding: 20px;
+    }
+
+    .wristery-menu .offcanvas-body {
+        padding: 20px;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 380px) {
+    .header-container {
+        padding: 5px 3%;
+    }
+
+    .wristery-logo img {
+        height: 38px;
+        max-width: 90px;
+    }
+
+    .menu-button {
+        font-size: 23px;
+    }
+
+    .header-icons {
+        gap: 8px;
+    }
+
+    .header-icon {
+        font-size: 16px;
+    }
+}
+.watch-video {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+}
+
+/* REMOVE EXTRA SPACE FROM VIDEO PARENT */
+.watch-video-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.watch-video-container video {
+    width: 100% !important;
+    max-width: none !important;
+}
